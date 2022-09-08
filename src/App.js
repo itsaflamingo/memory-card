@@ -32,18 +32,17 @@ function App() {
     { name: 'Scroopy Noopers',   url: '/scroopy.jpg',       id: uniqid() }
   ])
 
+  // randomize cards after each render
   useEffect(() => {
-    // randomize cards after each render
     randomize();
   }, [score, PICTURES])
 
+  // reset score
   useEffect(() => {
     setScore(0)
   }, [bestScore])
 
-  const win = () => {
-    console.log('Win!')
-  }
+  // set new record
   const newBestScore = () => {
     if(score > bestScore) {
      setBestScore(score); 
@@ -52,36 +51,20 @@ function App() {
 
   const checkIfClicked = (e) => {
     // if array includes id 
-    const clicked = document.querySelectorAll('.clicked');
-
+    const clicked = document.querySelector('.clicked');
+    // if already clicked, reset game
     if(e.target.classList.contains('clicked')) {
       newBestScore();
-
-      clicked.forEach(click => {
-        click.classList.remove('clicked')
-      })
+      clicked.classList.remove('clicked');
     }
-
-    PICTURES.forEach((pic) => {
-      const id = document.querySelector(`#${pic.id}`)
-      if(!id.classList.contains('clicked')) {
-        e.target.classList.add('clicked')
-        addScore();
-        checkIfWin()
-      }
-    })
+    else {
+      e.target.classList.add('clicked');
+      addScore();
+    }  
   }
 
-  const checkIfWin = () => {
-    if(score === PICTURES.length) {
-      win();
-    }
-    else return;
-  }
-
-  const addScore = () => {
-    setScore(score + 1);
-  }
+  const addScore = () => setScore(score + 1);
+  
 
   const randomize = () => {
     for(let i=PICTURES.length-1; i>0; i--) {
