@@ -17,7 +17,7 @@ function App() {
     { name: 'Dr.Wong',           url: '/Dr._Wong.webp',     id: uniqid() },
     { name: 'Bird Person',       url: '/bird-person.jpg',   id: uniqid() },
     { name: 'Jerry',             url: '/jerry.jpeg',        id: uniqid() },
-    { name: 'Jessica',           url: '/jessica.webp',      id: uniqid() },
+    { name: 'Jessica',           url: '/jessica.jpg',       id: uniqid() },
     { name: 'Mr. Meseeks',       url: '/meseeks.jpg',       id: uniqid() },
     { name: 'Morty',             url: '/morty.png',         id: uniqid() },
     { name: 'Pensylvester',      url: '/Pensylvester.webp', id: uniqid() },
@@ -37,6 +37,10 @@ function App() {
     randomize();
   }, [score, PICTURES])
 
+  useEffect(() => {
+    setScore(0)
+  }, [bestScore])
+
   const win = () => {
     console.log('Win!')
   }
@@ -48,21 +52,22 @@ function App() {
 
   const checkIfClicked = (e) => {
     // if array includes id 
-    const id = e.target.id;
+    const clicked = document.querySelectorAll('.clicked')
 
-    if(id === 'clicked') {
+    if(e.target.classList.contains('clicked')) {
       newBestScore();
-        setScore(0);
 
-        PICTURES.forEach((pic) => {
-          pic.id = pic.key;
-        })
+      clicked.forEach(click => {
+        click.classList.toggle('clicked')
+      })
     }
-    
+
     PICTURES.forEach((pic) => {
-      if(pic.id === id) {
-        e.target.id ='clicked';
+      const id = document.querySelector(`#${pic.id}`)
+      if(!id.classList.contains('clicked')) {
+        e.target.classList.toggle('clicked')
         addScore();
+        checkIfWin()
       }
     })
     //reset array
@@ -72,8 +77,10 @@ function App() {
   }
 
   const checkIfWin = () => {
-    if(score === PICTURES.length)
+    if(score === PICTURES.length) {
       win();
+    }
+    else return;
   }
 
   const addScore = () => {
