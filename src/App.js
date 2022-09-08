@@ -52,28 +52,24 @@ function App() {
 
   const checkIfClicked = (e) => {
     // if array includes id 
-    const clicked = document.querySelectorAll('.clicked')
+    const clicked = document.querySelectorAll('.clicked');
 
     if(e.target.classList.contains('clicked')) {
       newBestScore();
 
       clicked.forEach(click => {
-        click.classList.toggle('clicked')
+        click.classList.remove('clicked')
       })
     }
 
     PICTURES.forEach((pic) => {
       const id = document.querySelector(`#${pic.id}`)
       if(!id.classList.contains('clicked')) {
-        e.target.classList.toggle('clicked')
+        e.target.classList.add('clicked')
         addScore();
         checkIfWin()
       }
     })
-    //reset array
-    //set score to 0
-    //check if best score
-    //randomize
   }
 
   const checkIfWin = () => {
