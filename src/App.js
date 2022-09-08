@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Head from './components/Head'
 import Main from './components/Main'
@@ -9,7 +9,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0); 
 
-  const PICTURES = [
+  const [PICTURES] = useState([
     { name: 'Beth',              url: '/beth.webp',         id: uniqid() },
     { name: 'Rick',              url: '/rick.webp',         id: uniqid() },
     { name: 'Alien',             url: '/alien.png',         id: uniqid() },
@@ -30,39 +30,68 @@ function App() {
     { name: 'Unity',             url: '/unity.webp',        id: uniqid() },
     { name: 'Squanchy',          url: '/squanchy.webp',     id: uniqid() },
     { name: 'Scroopy Noopers',   url: '/scroopy.jpg',       id: uniqid() }
-  ]
+  ])
+
+  useEffect(() => {
+    // randomize cards after each render
+    randomize();
+  }, [score, PICTURES])
 
   const win = () => {
     console.log('Win!')
   }
-
-  const checkIfClicked = (id) => {
-    // if array includes id 
-    if(PICTURES.includes(id) {
-      //remove id from array 
-    })
-    else {
-      //reset array
-      //set score to 0
-      //check if best score
+  const newBestScore = () => {
+    if(score > bestScore) {
+     setBestScore(score); 
     }
+  }
+
+  const checkIfClicked = (e) => {
+    // if array includes id 
+    const id = e.target.id;
+
+    if(id === 'clicked') {
+      newBestScore();
+        setScore(0);
+
+        PICTURES.forEach((pic) => {
+          pic.id = pic.key;
+        })
+    }
+    
+    PICTURES.forEach((pic) => {
+      if(pic.id === id) {
+        e.target.id ='clicked';
+        addScore();
+      }
+    })
+    //reset array
+    //set score to 0
+    //check if best score
     //randomize
   }
 
-  const checkIfWin = (score, name) => {
-    if(score === PICTURES.length) {
+  const checkIfWin = () => {
+    if(score === PICTURES.length)
       win();
+  }
+
+  const addScore = () => {
+    setScore(score + 1);
+  }
+
+  const randomize = () => {
+    for(let i=PICTURES.length-1; i>0; i--) {
+      // Math.random * max (will choose between 0 and 20 bc max is 21)
+      const j = Math.floor(Math.random() * (i+1));
+      [PICTURES[i], PICTURES[j]] = [PICTURES[j], PICTURES[i]];
     }
-    
-    checkIfClicked(name)
-    
-    setScore();
   }
   
   return (
     <div className="App">
-      <Head /> 
-      <Main pics={PICTURES} onClick={checkIfWin} />
+      <Head score={score} bestScore={bestScore} /> 
+      <Main pics={PICTURES} onClick={checkIfClicked} />
     </div>
   );
 }

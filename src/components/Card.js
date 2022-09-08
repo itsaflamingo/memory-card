@@ -5,7 +5,7 @@ export default function Head(props) {
         <div className="cards">
             {props.pics.map((pic) => {
                 return (
-                    <div className="card" id={pic.id} key={pic.id} style={{
+                    <div className="card" id={pic.id} key={pic.id} onClick={props.onClick} style={{
                         backgroundImage: `url(${pic.url})`,
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat'
@@ -14,9 +14,6 @@ export default function Head(props) {
                     </div>
                 )
             })}
-            <div className="name">
-
-            </div>
         </div>
     )
 }
