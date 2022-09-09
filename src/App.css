@@ -5,12 +5,14 @@ body {
     --gradient: linear-gradient(90deg, black, #69C8ECFF);
     --background-color: rgba(255, 255, 255, 0.159);
     font-family: 'Lobster', cursive;
+    color: rgb(206, 222, 222);
 }
 .App {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
 }
 /* HEAD */
 #head {
@@ -35,7 +37,6 @@ body {
     display: flex;
     justify-content: space-around;
     gap: 18rem;
-    color: white;
 }
 #instructions {
     font-size: 1.3rem;
@@ -59,12 +60,10 @@ body {
     align-items: center;  
     justify-content: center;
     background-color: var(--background-color);
-    color: white;
 }
 .card {
     height: 80%;
     width: 80%;
-    color: white;
     border-radius: 20px;
 }
 .outer-card:hover {
