@@ -1,6 +1,6 @@
 This is a memory card game created using React, JavaScript, HTML & CSS. 
 
-Live site URL: itsaflamingo.github.io/memory-card
+Live site URL: [itsaflamingo.github.io/memory-card](https://itsaflamingo.github.io/memory-card/)
 
 Link to assignment: https://www.theodinproject.com/lessons/node-path-javascript-memory-card
 
