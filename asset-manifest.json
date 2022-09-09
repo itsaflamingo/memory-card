@@ -1,14 +1,34 @@
 {
   "files": {
     "main.css": "/memory-card/static/css/main.45f57b08.css",
-    "main.js": "/memory-card/static/js/main.c1b8f9fb.js",
+    "main.js": "/memory-card/static/js/main.58758569.js",
+    "static/media/morty.png": "/memory-card/static/media/morty.55dd4aff3d506852f6fc.png",
     "static/media/Rick-and-Morty.png": "/memory-card/static/media/Rick-and-Morty.7c6bc53e5d236db70322.png",
+    "static/media/DrWong.webp": "/memory-card/static/media/DrWong.55b2bbe1bea3edfbc497.webp",
+    "static/media/squanchy.webp": "/memory-card/static/media/squanchy.73e90b0c4256600a0f89.webp",
+    "static/media/Pensylvester.webp": "/memory-card/static/media/Pensylvester.4a65c3e67c3b1538289d.webp",
+    "static/media/jessica.jpg": "/memory-card/static/media/jessica.be4e167a0e72a1a71fbf.jpg",
+    "static/media/bird-person.jpg": "/memory-card/static/media/bird-person.17940c296e0fc13d30c2.jpg",
+    "static/media/tammy.jpg": "/memory-card/static/media/tammy.65b84cf56eded3cc92b2.jpg",
+    "static/media/toast.webp": "/memory-card/static/media/toast.580a968c42dc3addb153.webp",
+    "static/media/scroopy.jpg": "/memory-card/static/media/scroopy.5a9aeba0f1b276c37d47.jpg",
+    "static/media/jerry.jpeg": "/memory-card/static/media/jerry.a990bb8d4c42a6ff7ebe.jpeg",
+    "static/media/rick.webp": "/memory-card/static/media/rick.a628243f4c94034cdd42.webp",
+    "static/media/meseeks.jpg": "/memory-card/static/media/meseeks.e16f856694431ce3292a.jpg",
+    "static/media/glootie.webp": "/memory-card/static/media/glootie.144e598bb0f00b0b448d.webp",
+    "static/media/summer.webp": "/memory-card/static/media/summer.0019ff046009025e651c.webp",
+    "static/media/unity.webp": "/memory-card/static/media/unity.96910e7afde49e936827.webp",
+    "static/media/poopybutt.png": "/memory-card/static/media/poopybutt.c662ee165c5121236b64.png",
+    "static/media/devil.png": "/memory-card/static/media/devil.e8f9222663a132a14647.png",
+    "static/media/snowball.webp": "/memory-card/static/media/snowball.3cd2f598331506ba2a18.webp",
+    "static/media/pickle-rick.jpg": "/memory-card/static/media/pickle-rick.459433420b71f11feb6f.jpg",
+    "static/media/beth.webp": "/memory-card/static/media/beth.78fb2de2e9b3161da015.webp",
     "index.html": "/memory-card/index.html",
     "main.45f57b08.css.map": "/memory-card/static/css/main.45f57b08.css.map",
-    "main.c1b8f9fb.js.map": "/memory-card/static/js/main.c1b8f9fb.js.map"
+    "main.58758569.js.map": "/memory-card/static/js/main.58758569.js.map"
   },
   "entrypoints": [
     "static/css/main.45f57b08.css",
-    "static/js/main.c1b8f9fb.js"
+    "static/js/main.58758569.js"
   ]
 }
