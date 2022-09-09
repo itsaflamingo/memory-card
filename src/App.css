@@ -15,8 +15,9 @@ body {
 /* HEAD */
 #head {
     width: 100vw;
-    height: 20vh;
+    height: 25vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
@@ -24,21 +25,22 @@ body {
 #background {
     background-image: url(./img/Rick-and-Morty.png);
     background-size: cover;
-    width: 33vw;
-    height: 20vh;
-    z-index: 10;
-    margin-top: -5rem;
+    width: 21vw;
+    height: 1000%;
+    margin-top: -20px;
 }
 #info {
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin: 5rem 2rem 0 0;
+    justify-content: space-around;
+    gap: 18rem;
+    color: white;
 }
 #instructions {
     font-size: 1.3rem;
     text-align: center;
+    padding-top: 10px;
 }
 /* MAIN */
 .cards {
@@ -57,6 +59,7 @@ body {
     align-items: center;  
     justify-content: center;
     background-color: var(--background-color);
+    color: white;
 }
 .card {
     height: 80%;
@@ -69,6 +72,7 @@ body {
 }
 h3 {
     margin: 0;
+    margin-top: 0.5rem;
 }
 p {
     margin: 0;
