@@ -45,11 +45,10 @@ body {
 }
 /* MAIN */
 .cards {
-    width: 80vw;
+    width: 90vw;
     height: 135vh;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 250px));
     gap: 1rem;
     margin-top: 5px;
 }
@@ -60,6 +59,7 @@ body {
     align-items: center;  
     justify-content: center;
     background-color: var(--background-color);
+    min-height: 200px;
 }
 .card {
     height: 80%;

@@ -57,6 +57,7 @@ function App() {
       newBestScore();
       clicked.classList.remove('clicked');
     }
+    // else, add class clicked & +1 score
     else {
       e.target.classList.add('clicked');
       addScore();
@@ -77,7 +78,7 @@ function App() {
   return (
     <div className="App">
       <Head score={score} bestScore={bestScore} /> 
-      <Main pics={PICTURES} onClick={checkIfClicked} />
+      <Main pictures={PICTURES} onClick={checkIfClicked} />
     </div>
   );
 }

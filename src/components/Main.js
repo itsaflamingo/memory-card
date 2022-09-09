@@ -4,7 +4,7 @@ import Card from './Card'
 export default function Main(props) {
     return (
         <div id='main'>
-            <Card {...props} />
+            <Card {...props}  />
         </div>
     )
 }
