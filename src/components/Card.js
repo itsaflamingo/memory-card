@@ -7,7 +7,7 @@ export default function Head(props) {
                 return (
                     <div className="outer-card" key={pic.id}>
                         <div className="card" onClick={props.onClick} style={{
-                            backgroundImage: `url(${pic.url})`,
+                            backgroundImage: `url(${pic.image})`,
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
                         }}>
