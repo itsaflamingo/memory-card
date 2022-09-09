@@ -1,48 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 body {
     margin: 0;
-    background-image: linear-gradient(90deg, #FB6467FF, #526E2DFF);
-
+    background-image: linear-gradient(90deg, black, #69C8ECFF);
+    --gradient: linear-gradient(90deg, black, #69C8ECFF);
+    --background-color: rgba(255, 255, 255, 0.159);
+    font-family: 'Lobster', cursive;
 }
 .App {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 /* HEAD */
 #head {
-    width: 15vw;
-    height: 50vh;
+    width: 100vw;
+    height: 20vh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    margin-right: 1rem;
 }
-#score {
-    height: 10%;
+#background {
+    background-image: url(./img/Rick-and-Morty.png);
+    background-size: cover;
+    width: 33vw;
+    height: 20vh;
+    z-index: 10;
+    margin-top: -5rem;
+}
+#info {
+    height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem 2rem 0 0;
 }
 #instructions {
     font-size: 1.3rem;
+    text-align: center;
 }
 /* MAIN */
 .cards {
     width: 80vw;
-    height: 101vh;
+    height: 135vh;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 1rem;
     margin-top: 5px;
 }
-.card {
+.outer-card {
     border-radius: 20px;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;  
     justify-content: center;
+    background-color: var(--background-color);
+}
+.card {
+    height: 80%;
+    width: 80%;
     color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    border-radius: 20px;
+}
+.outer-card:hover {
+    box-shadow: 0 20px 20px 10px rgba(255, 255, 255, 0.4);
 }
 h3 {
+    margin: 0;
+}
+p {
     margin: 0;
 }

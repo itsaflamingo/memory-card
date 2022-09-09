@@ -5,11 +5,13 @@ export default function Head(props) {
         <div className="cards">
             {props.pics.map((pic) => {
                 return (
-                    <div className="card" id={pic.id} key={pic.id} onClick={props.onClick} style={{
-                        backgroundImage: `url(${pic.url})`,
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat'
-                    }}>
+                    <div className="outer-card" key={pic.id} >
+                        <div className="card" id={pic.id} onClick={props.onClick} style={{
+                            backgroundImage: `url(${pic.url})`,
+                            backgroundSize: 'cover',
+                            backgroundRepeat: 'no-repeat'
+                        }}>
+                        </div>
                         <h3 id='name'>{pic.name}</h3>
                     </div>
                 )
